@@ -26,3 +26,4 @@
 /Users/vitali/Desktop/code/example/Kontaktverwaltung/Backend/obj/Debug/net9.0/Backend.pdb
 /Users/vitali/Desktop/code/example/Kontaktverwaltung/Backend/obj/Debug/net9.0/Backend.genruntimeconfig.cache
 /Users/vitali/Desktop/code/example/Kontaktverwaltung/Backend/obj/Debug/net9.0/ref/Backend.dll
+/Users/vitali/Desktop/code/example/Kontaktverwaltung/Backend/obj/Debug/net9.0/Backend.csproj.AssemblyReference.cache

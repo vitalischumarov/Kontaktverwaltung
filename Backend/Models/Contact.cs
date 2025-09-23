@@ -1,9 +1,8 @@
-using System.Runtime.InteropServices.JavaScript;
+namespace Backend.Models;
 
-namespace Backend.DTO;
-
-public class ContactDTO
+public class Contact
 {
+    private int id { get; set; }
     private string firstName { get; set; }
     private string lastName { get; set; }
     private string email { get; set; }
