@@ -9,10 +9,6 @@ namespace Backend.Controllers;
 public class ContactController : ControllerBase
 {
     private DbContactContext context = new DbContactContext();
-    private List<string> namen = new List<string>()
-    {
-        "Vitali","Tasi","Coralie","Yumi"
-    };
 
     //GET
     [HttpGet]
@@ -20,6 +16,12 @@ public class ContactController : ControllerBase
     {
         var contacts = context.Contacts.ToList();
         return contacts;
+    }
+
+    [HttpGet("{id}")]
+    public async Task<Contact> getData(int id)
+    {
+        return context.Contacts.Find(id);
     }
     //POST
     [HttpPost]
@@ -33,4 +35,12 @@ public class ContactController : ControllerBase
     //PUT
 
     //DELETE
+    [HttpDelete]
+    public IActionResult DeleteData([FromBody] Contact contact)
+    {
+        context.Contacts.Remove(contact);
+        context.SaveChanges();
+        return Ok("Data deleted");
+    }
+    
 }
