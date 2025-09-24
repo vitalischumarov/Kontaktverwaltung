@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Backend.Models;
+using Backend.Data;
 
 namespace Backend.Controllers;
 
@@ -7,6 +8,7 @@ namespace Backend.Controllers;
 [ApiController]
 public class ContactController : ControllerBase
 {
+    private DbContactContext context = new DbContactContext();
     private List<string> namen = new List<string>()
     {
         "Vitali","Tasi","Coralie","Yumi"
@@ -14,12 +16,20 @@ public class ContactController : ControllerBase
 
     //GET
     [HttpGet]
-    public async Task<List<string>> getData()
+    public async Task<List<Contact>> getData()
     {
-        return namen;
+        var contacts = context.Contacts.ToList();
+        return contacts;
     }
     //POST
-
+    [HttpPost]
+    public IActionResult PostData([FromBody] Contact contact)
+    {
+        context.Contacts.Add(contact);
+        context.SaveChanges();
+        return Ok("Data created");
+    }
+    
     //PUT
 
     //DELETE

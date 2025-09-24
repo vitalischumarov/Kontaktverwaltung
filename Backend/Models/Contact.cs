@@ -2,11 +2,11 @@ namespace Backend.Models;
 
 public class Contact
 {
-    private int id { get; set; }
-    private string firstName { get; set; }
-    private string lastName { get; set; }
-    private string email { get; set; }
-    private string phone { get; set; }
-    private string address { get; set; }
-    private string birthDate { get; set; }
+    public int id { get; set; }
+    public string firstName { get; set; }
+    public string lastName { get; set; }
+    public string email { get; set; }
+    public string phone { get; set; }
+    public string address { get; set; }
+    public string birthDate { get; set; }
 }
